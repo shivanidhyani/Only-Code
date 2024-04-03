@@ -1,0 +1,65 @@
+[
+    {
+    "id": 1,
+    "name": "John",
+    "age": 30,
+    "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zipcode": "10001"
+    },
+    "contacts": [
+        {
+        "type": "email",
+        "value": "john@example.com"
+        },
+        {
+        "type": "phone",
+        "value": "555-123-4567"
+        }
+    ]
+    },
+    {
+    "id": 2,
+    "name": "Alice",
+    "age": 25,
+    "address": {
+        "street": "456 Elm St",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zipcode": "90001"
+    },
+    "contacts": [
+        {
+        "type": "email",
+        "value": "alice@example.com"
+        },
+        {
+        "type": "phone",
+        "value": "555-987-6543"
+        }
+    ]
+    },
+    {
+    "id": 3,
+    "name": "Bob",
+    "age": 35,
+    "address": {
+        "street": "789 Oak St",
+        "city": "Chicago",
+        "state": "IL",
+        "zipcode": "60601"
+    },
+    "contacts": [
+        {
+        "type": "email",
+        "value": "bob@example.com"
+        },
+        {
+        "type": "phone",
+        "value": "555-555-5555"
+        }
+    ]
+    }
+]
