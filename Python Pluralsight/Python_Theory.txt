@@ -1,0 +1,13 @@
+Python Data Type
+    Numeric
+        int
+        float
+    
+    Dictionary {dict}
+
+    Boolean
+    Set
+    Sequence Type
+        List
+        Tuple
+        strings

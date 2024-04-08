@@ -1,0 +1,17 @@
+Pandas Interview Qiuestion 
+
+1. What is Pandas in Python?
+Pandas is a Open source Python Package. Which is commonly used for Data Analysis, Data Science and 
+Machine Learning.It is built in top of another library NumPy. Its very effiecnt in performing various
+functions like Data Visulization, Data Manipulation and Data Analysis.
+
+2. Different types of Data Structures in Pandas?
+Pandas have three different types of data structures. It is due to these simple and flexible data structures that it is fast and efficient.
+
+Series
+DataFrame
+
+
+
+
+
