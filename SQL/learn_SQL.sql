@@ -34,11 +34,11 @@ DROP TABLE EmployeePosition;
 
 INSERT INTO EmployeePosition(EmpID, EmpPosition, DateOfJoining, Salary)
 VALUES  
-    (1, 'Manager', '2024-05-02', 500000), 
+    (1, 'Manager', '2024-05-02', 50000), 
     (2, 'Executive', '2024-05-02', 75000),
     (3, 'Manager', '2024-05-01', 90000),
-    (2, 'Lead', '2024-05-02', 85000),
-    (1, 'Executive', '2024-05-01', 300000),
+    (5, 'Lead', '2024-05-02', 85000),
+    (4, 'Executive', '2024-05-01', 30000),
     (6, 'Associate Consultant', '2021-06-15', 40000);
 
 SELECT * FROM EmployeePosition;
@@ -76,5 +76,40 @@ SELECT * FROM EmployeePosition ORDER BY Salary ASC LIMIT 5;
 
 #Write a query to retrieve the EmpFname and EmpLname in a single column as “FullName”. The first name and the last name must be separated with space.
 SELECT CONCAT(EmpFname, ' ', EmpLname) AS FullName FROM EmployeeInfo;
+
+#Write a query find number of employees whose DOB is between 02/05/1970 to 31/12/1975 and are grouped according to gender
+SELECT COUNT(*) FROM EmployeeInfo WHERE DOB BETWEEN 970-05-02 AND 1975-12-31 GROUP BY Gender;
+
+#9. Write a SQL query to find the second-highest salary from an employee table.
+SELECT MAX(Salary) AS SecondHighestSalary
+FROM EmployeePosition
+WHERE Salary <(SELECT MAX(Salary) FROM EmployeePosition);
+
+SELECT Salary AS SecondHighestSalary
+FROM EmployeePosition
+ORDER BY Salary DESC
+LIMIT 1 OFFSET 1;
+
+# List al the employee details who are Manager 
+SELECT EmployeeInfo.* FROM EmployeeInfo LEFT JOIN EmployeePosition ON EmployeeInfo.EmpID = EmployeePosition.EmpID
+WHERE EmployeePosition.EmpPosition = 'Manager';
+
+# Write a query to update male to female and female to male in gender column 
+UPDATE EmployeeInfo
+SET Gender = CASE
+		WHEN Gender = 'M' THEN 'F'
+		WHEN Gender = 'F' THEN 'M'
+        END;
+        
+UPDATE EmployeeInfo
+SET Gender = CASE
+    WHEN Gender = 'M' THEN 'F'
+    WHEN Gender = 'F' THEN 'M'
+END;
+
+SELECT EmployeeInfo.EmpFname, EmployeePosition.salary FROM EmployeeInfo LEFT JOIN  EmployeePosition ON EmployeeInfo.EmpID = EmployeePosition.EmpID Where Salary =(
+SELECT MAX(salary) FROM EmployeePosition);
+	
+
 
 
