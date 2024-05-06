@@ -1,0 +1,54 @@
+Defining SQL order of execution
+    +--------+-----------------------------------------+
+    |  CLAUSE|                                 FUNCTION|
+    +--------+-----------------------------------------+
+    |    FROM| Choose and JOIN tables to get base data.|
+    |   WHERE|                   Filters the base data.|
+    |GROUP BY|                Aggregates the base data.|
+    |  HAVING|              Filter the aggregated data.|
+    |  SELECT|                  Returns the final data.|
+    |ORDER BY|                    Sorts the final data.|
+    |   LIMIT| Limits the returned data to a row count.|
+    +--------+-----------------------------------------+
+
+What is the difference between IFNULL and COALESCE in MySQL?
+    In both clauses the main difference is argument passing. For IFNULL it's two parameters and for COALESCE it's multiple parameters. 
+    So except that, do we have any other difference between these two?
+    Both function lets you return an alternative value if an expression is NULL.
+    IFNULL(Salary, 0)
+    COALESCE(Salary, Bonus)
+
+UNION Operator Working 
+    The UNION operator is used to combine the result-set of two or more SELECT statements.
+        Every SELECT statement within UNION must have the same number of columns
+        The columns must also have similar data types
+        The columns in every SELECT statement must also be in the same order
+    
+    The UNION operator selects only distinct values by default. To allow duplicate values, use UNION ALL:
+
+SQL 'LENGTH' & 'CHAR_LENGTH' Functions
+    The primary difference between these two functions crops up while dealing with multibyte characters (such as Unicode characters). Let's look at an example:
+    SELECT LENGTH('ǅ'), CHAR_LENGTH('ǅ');
+    In this case, the 'LENGTH' function would return 2 (because it's a multibyte character) and 'CHAR_LENGTH' would return 1.
+
+Table: Weather
+    +---------------+---------+
+    | Column Name   | Type    |
+    +---------------+---------+
+    | id            | int     |
+    | recordDate    | date    |
+    | temperature   | int     |
+    +---------------+---------+
+    id is the column with unique values for this table.
+    There are no different rows with the same recordDate.
+    This table contains information about the temperature on a certain day.
+    Write a solution to find all dates' Id with higher temperatures compared to its previous dates (yesterday).
+
+    SELECT w1.id
+    FROM Weather w1
+    LEFT JOIN Weather w2
+    ON w1.recordDate - INTERVAL 1 DAY = w2.recordDate
+    WHERE w1.temperature > w2.temperature;
+
+
+

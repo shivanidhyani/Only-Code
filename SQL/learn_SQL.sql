@@ -48,6 +48,9 @@ SELECT * FROM EmployeePosition;
 #Write a query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.
 SELECT UPPER(EmpFname) as EmpName FROM EmployeeInfo;
 
+Second highest
+
+
 #Write a query to fetch the number of employees working in the department ‘HR’.
 SELECT COUNT(*) FROM EmployeeInfo WHERE Department = 'HR';
 
